@@ -22,9 +22,6 @@ jobs:
           git config --global user.name "unaisdev"
           git config --global user.email "unaisdev@gmail.com"
           
-      - name: Make script executable
-        run: chmod +x ./create-branch.sh
-
       - name: Create new branch
         run: ./create-branch.sh
         env:
