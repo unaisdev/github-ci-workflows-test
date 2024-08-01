@@ -6,7 +6,7 @@ on:
       branch_name:
         description: 'Nombre de la nueva rama'
         required: true
-        default: 'new-branch-name'
+        default: 'release/'
 
 jobs:
   create-branch:
@@ -19,9 +19,12 @@ jobs:
           
       - name: Setup Git
         run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@bot.com"
+          git config --global user.name "unaisdev"
+          git config --global user.email "unaisdev@gmail.com"
           
+      - name: Make script executable
+        run: chmod +x ./create-branch.sh
+
       - name: Create new branch
         run: ./create-branch.sh
         env:
