@@ -30,7 +30,6 @@ jobs:
 
       - name: Push changes
         run: |
-          git checkout -b ${{ github.event.inputs.branch_name }}
-          git push origin ${{ github.event.inputs.branch_name }}
+
         env:
           SECRET: ${{ secrets.SECRET }}
