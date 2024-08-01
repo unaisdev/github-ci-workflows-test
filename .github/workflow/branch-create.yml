@@ -1,0 +1,28 @@
+name: create-new-branch 
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Nombre de la nueva rama'
+        required: true
+        default: 'new-branch-name'
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+name: Checkout repository
+    uses: actions/checkout@v2
+
+    
+name: Setup Git
+    run: |
+      git config --global user.name "bot"
+      git config --global user.email "bot@bot.com"
+name: Create new branch
+run: ./create-branch.sh
+env:
+  BRANCH_NAME: ${{ github.event.inputs.branch_name }}
