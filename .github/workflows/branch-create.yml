@@ -29,3 +29,4 @@ jobs:
         run: ./create-branch.sh
         env:
           BRANCH_NAME: ${{ github.event.inputs.branch_name }}
+          SECRET: ${{ secrets.SECRET }}
