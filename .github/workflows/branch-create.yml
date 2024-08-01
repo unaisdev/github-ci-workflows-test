@@ -30,8 +30,6 @@ jobs:
 
       - name: Push changes
         run: |
-          git add document.md
-          git commit -m "document.md"
           git checkout -b ${{ github.event.inputs.branch_name }}
           git push origin ${{ github.event.inputs.branch_name }}
         env:
