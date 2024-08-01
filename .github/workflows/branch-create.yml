@@ -14,15 +14,15 @@ jobs:
 
     steps:
     
-      name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
           
-      name: Setup Git
+      - name: Setup Git
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           
-      name: Create new branch
+      - name: Create new branch
         run: ./create-branch.sh
         env:
           BRANCH_NAME: ${{ github.event.inputs.branch_name }}
